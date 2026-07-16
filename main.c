@@ -13,14 +13,12 @@ int main(int argc, char *argv[]) {
         {"--help", "Didn't provide help."},
         {"--sandbox", "Didn't sandboxed doas."},
         {"--veromikka", "sowwy, couldn't dwoas :c"},
-        {"-Syu", "Your package manager has not been synced, refreshed, or updated."},
         {"-u", "Didn't doas %s."},
     };
     const int flags_len = sizeof(flags) / sizeof(flags[0]);
-    int i;
 
     if (argc > 1) {
-        for (i = 0; i < flags_len; i++) {
+        for (int i = 0; i < flags_len; ++i) {
             if (strcmp(argv[1], flags[i].flag) == 0) {
                 if (strcmp(argv[1], "-u") == 0) {
                     if (argc > 2) {
